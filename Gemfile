@@ -23,6 +23,7 @@ gem 'spring',        group: :development
 
 group :development do
   gem 'pry'
+  gem 'dotenv-rails'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
