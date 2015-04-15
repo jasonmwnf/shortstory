@@ -1,6 +1,8 @@
 class BooksController < ApplicationController
+  before_action :set_book, only: [:show, :edit, :update]
+  
   def index
-    @books = Book.all
+    @books = Book.where(availability: true)
   end
 
   def new
@@ -19,12 +21,27 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @book.update(book_params)
+      flash[:success] = "The book was updated."
+      redirect_to book_path(@book)
+    else
+      render :edit
+    end
   end
 
   private
 
     def book_params
       params.require(:book).permit(:name, :author, :description, :availability)
+    end
+
+    def set_book
+      @book = Book.find(params[:id])
     end
 end
