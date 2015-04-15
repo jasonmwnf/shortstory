@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :update, :create]
   before_action :set_book, only: [:show, :edit, :update]
-  
+
   def index
     @books = Book.where(availability: true)
   end
@@ -10,7 +11,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    book = Book.new(book_params)
+    book = current_user.books.new(book_params)
 
     if book.save
       flash[:success] = "Book has been created."
