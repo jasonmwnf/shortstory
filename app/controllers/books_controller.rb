@@ -25,9 +25,12 @@ class BooksController < ApplicationController
   end
 
   def edit
+    authorize! :manage, @book
   end
 
   def update
+    authorize! :manage, @book
+
     if @book.update(book_params)
       flash[:success] = "The book was updated."
       redirect_to book_path(@book)
