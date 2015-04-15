@@ -11,6 +11,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'cancan'
 gem 'paperclip'
+gem 'aws-sdk', '< 2.0'
 # gem 'therubyracer',  platforms: :ruby
 
 gem 'jquery-rails'
