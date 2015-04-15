@@ -1,9 +1,6 @@
-<%= simple_form_for @book, html: { class: "form-signin"} do |f| %>
-  <%= f.input :name, required: true, input_html: { class: "form-control" } %>
-  <%= f.input :author, required: true, input_html: { class: "form-control" } %>
-  <%= f.text_area :description, required: true, input_html: { class: "form-control" } %>
-  <%= f.input :price, required: true, input_html: { class: "form-control" } %>
-  <%= f.label :availability, "Availability" %>
-  <%= f.check_box :availability, label: true, input_html: { class: "form-control" } %>
-  <%= f.button :submit, "Update Book", class: "btn btn-primary btn-block" %>
-<% end %>
+<h1 class='text-center'>Edit Book</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', book_path(@book) %>
+  
