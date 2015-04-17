@@ -14,6 +14,7 @@ gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
 gem 'friendly_id'
 gem 'stripe'
+gem 'aasm'
 # gem 'therubyracer',  platforms: :ruby
 
 gem 'jquery-rails'
